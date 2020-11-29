@@ -176,6 +176,5 @@ for ID in grid["grid_id"]:
 ### Speed Radars Location on Roads in Square 158
 ![square 158](images/ID_158.png "square 158")
 
-### to explore ineractive map here
-[link](https://speedradars.netlify.app)
+### to explore ineractive map [here](https://speedradars.netlify.app)
 > by | *yasser ismail*
