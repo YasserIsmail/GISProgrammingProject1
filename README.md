@@ -62,29 +62,7 @@ def Sq_Grid(gdf,length,epsg_code):
             y0=y1-length  ##y0 is a minimum y axis to box
             cells.append(box(x0,y0,x1,y1))
     return gpd.GeoDataFrame(geometry=cells,crs=CRS.from_epsg(epsg_code))
-
-'''
-gdf : GeoDataframe
-length : side square length
-epsg_code : code to crs
-----------------------------------
-The box is ↓↓↓
-
-              
-    (x0,y1)_______ (x1,x2)
-          |       |
-          |       |  
-          |__ ____|
-    (x0,y0)        (x1,y0)
-
-x0=minx
-y0=miny
-x1=maxx
-x2=maxy
---------------------------------
-use np.arange because float values
-
-'''
+    
 
 grid = Sq_Grid(road,20000,5179)
 grid.head(3)
@@ -123,13 +101,6 @@ road_intersection.head(3)
 ### create "grid_id" column in cameras
 ```py
 cameras_grid_id=gpd.sjoin(cameras,grid,how="left",op="within",rsuffix='grid',)
-
-'''
-how="left" ↓↓
-
-a result of "left" same a result of "inner"
-
-I used "left" to save index ascending of cameras
 
 '''
 cameras_grid_id.head(3)
@@ -177,4 +148,5 @@ for ID in grid["grid_id"]:
 ![square 158](images/ID_158.png "square 158")
 
 ### to explore ineractive map [here](https://speedradars.netlify.app)
-> by | *yasser ismail*
+
+yasser ismail
