@@ -1,5 +1,5 @@
-# GIS Programming project #1
-A task in the Gis Programming Course
+# the first task in the gis programming 
+
 ### import Libraries
 ```py
 import os
